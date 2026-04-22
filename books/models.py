@@ -13,7 +13,7 @@ class Category(models.Model):
     
 
 class Book(models.Model):
-
+    category = models.ForeignKey(Category, related_name='books', on_delete=models.CASCADE)
     title = models.CharField(max_length=250)  
     author = models.CharField(max_length=250)  
     image = models.CharField(max_length=2000) 
